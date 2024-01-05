@@ -13,6 +13,8 @@ pipeline{
                 echo "eslcome ${name}"
                 echo "you enrolled in ${course} course"
                 echo "my git creds are ${git_creds}"
+                echo "my git username is ${GIT_CREDS_USR}" //if we want only usernam ewe will use _USR
+                echo "my git password is ${GIT_CREDS_PSW}" //For getting my password we need to use _PSW after variable
 
             }
         }
