@@ -17,10 +17,12 @@ pipeline{
         stage('Testing'){
             environment{ //this environment is scoped to only stage level
                 cloud='GCP'
+                name='habbeb'
 
             }
             steps{
                 echo "You are certified in ${cloud}" //note thet ${} only works with double quotes
+                echo "your name is ${name}"
             }
         }
     }
