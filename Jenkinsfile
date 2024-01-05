@@ -1,10 +1,17 @@
 pipeline{
     agent any
+    environment{ //now we are defining environment in pipeline scope
+       name='pradeep'
+
+       course='GCP'
+
+    }
     stages{
-        stage('A'){
+        stage('Build'){
             steps{
-                echo "executing multi branch pipeline"
-                echo 'its working fine'
+                echo "eslcome ${name}"
+                echo "you enrolled in ${gcp} course"
+
             }
         }
     }
