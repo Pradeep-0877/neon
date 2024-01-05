@@ -10,7 +10,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo "eslcome ${name}"
-                echo "you enrolled in ${gcp} course"
+                echo "you enrolled in ${course} course"
 
             }
         }
