@@ -23,6 +23,7 @@ pipeline{
             steps{
                 echo "You are certified in ${cloud}" //note thet ${} only works with double quotes
                 echo "your name is ${name}"
+                sh 'printenv'
             }
         }
     }
