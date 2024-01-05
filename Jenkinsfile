@@ -2,6 +2,7 @@ pipeline{
     agent any
     environment{ //now we are defining environment in pipeline scope this variables is available for all stages
        name='pradeep'
+        git_creds=credentials('my_git_creds')
 
        course='GCP'
 
@@ -11,6 +12,7 @@ pipeline{
             steps{
                 echo "eslcome ${name}"
                 echo "you enrolled in ${course} course"
+                echo "my git creds are ${git_creds}"
 
             }
         }
