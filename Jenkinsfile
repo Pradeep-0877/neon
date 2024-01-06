@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('Build'){
             when{
-                allOf{
+                anyOf{
                     //the below all conditions needs to be satisfied in order for the stage to execute
                     branch 'feature'
                     environment name: 'DEPLOY_TO', value: 'prods'
