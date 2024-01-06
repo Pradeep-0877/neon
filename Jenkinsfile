@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage('deployment'){
             environment{
-                DEPLOY_TO 'prod'
+                DEPLOY_TO='prod'
             }
             when{
                 environment name 'DEPLOY_TO' , value 'prod'
