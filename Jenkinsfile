@@ -10,7 +10,7 @@ pipeline{
             
             when{
                 // environment name: 'DEPLOY_TO' , value: 'prod'
-                equals expected: 11 , actual: "currentBild.number"
+                equals expected: 12 , actual: currentBild.number
             }
             steps{
                 echo 'Deploying...'
