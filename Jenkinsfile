@@ -17,7 +17,7 @@ pipeline{
             when{
                 //stage should execute with either production branch or staging branch
                 expression{
-                    BRANCH_NAME ==~ /(production|staging|feature)/ //For using  BRANCH_NAME it should work in multibranch pipeline
+                    BRANCH_NAME ==~ /(production|staging)/ //For using  BRANCH_NAME it should work in multibranch pipeline
 
 
                 }
