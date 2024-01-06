@@ -17,7 +17,7 @@ pipeline{
             }
 
         }
-        stage('Build'){
+        stage('Deploy to stages'){
             when{
                 branch 'release/*'
             }
