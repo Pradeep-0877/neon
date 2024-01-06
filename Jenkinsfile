@@ -1,30 +1,21 @@
-//expression
 pipeline{
     agent any
+    environment{
+        DEPLOY_TO="prod"
+    }
     stages{
         stage('Build'){
-            steps{
-                echo "Welcomr to Build stage"
-            }
-        }
-        stage('deploy to dev'){
-            steps{
-                echo "deployimg to dev environment"
-
-            }
-        }
-        stage("deploy to stage"){
             when{
-                //stage should execute with either production branch or staging branch
-                expression{
-                    BRANCH_NAME ==~ /(production|staging)/ //For using  BRANCH_NAME it should work in multibranch pipeline
-
-
+                allOf{
+                    //the below all conditions needs to be satisfied in order for the stage to execute
+                    branch 'feature'
+                    environment name: 'DEPLOY_TO' value: 'prod'
                 }
             }
             steps{
-                echo "deploy to staging"
+                echo "Hurray!! it's working fine"
             }
+
         }
     }
 }
