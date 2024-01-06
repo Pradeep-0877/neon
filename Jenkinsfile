@@ -8,9 +8,11 @@ pipeline{
     stages{
         stage('deployment'){
             
-            when{
+           when{
                 // environment name: 'DEPLOY_TO' , value: 'prod'
-                equals expected: 13 , actual: currentBuild.number
+             not{
+                equals expected: 13 , actual: "${BUILD_NUMBER}"
+             }
             }
             steps{
                 echo 'Deploying...'
