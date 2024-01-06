@@ -17,5 +17,14 @@ pipeline{
             }
 
         }
+        stage('Build'){
+            when{
+                branch 'release/*'
+            }
+            steps{
+                echo "Hurray!! we deployed to release"
+            }
+
+        }
     }
 }
