@@ -1,16 +1,29 @@
+//expression
 pipeline{
     agent any
     stages{
-        stage('A'){
+        stage('Build'){
             steps{
-                echo "executing multi branch pipeline"
-                echo 'its working fine'
+                echo "Welcomr to Build stage"
             }
         }
-        stage('B'){
+        stage('deploy to dev'){
             steps{
-                echo "executing multi branch pipeline"
-                echo 'it is a on different branch'
+                echo "deployimg to dev environment"
+
+            }
+        }
+        stage("deploy to stage"){
+            when{
+                //stage should execute with either production branch or staging branch
+                expression{
+                    BRANCH_NAME ==~ /(production|staging|feature)/ //For using  BRANCH_NAME it should work in multibranch pipeline
+
+
+                }
+            }
+            steps{
+                echo "deploy to staging"
             }
         }
     }
