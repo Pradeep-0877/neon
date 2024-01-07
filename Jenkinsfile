@@ -4,10 +4,10 @@ ecutingpipeline{
         stage('parellel stages'){
             parellel{
                 stage("executing sonar scan"){
-                    steps[
+                    steps{
                         echo "exucuting sonar scans"\
                         sleep 10
-                    ]
+                    }
                 }
                 stage("Doing forify scans"){
                     steps[
