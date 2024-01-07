@@ -12,6 +12,7 @@ pipeline{
                 stage("Doing forify scans"){
                     steps{
                         echo "Doing fortify scans"
+                        error "load is heavy
                         sleep 20
                     }
                 }
