@@ -1,4 +1,4 @@
-ecutingpipeline{
+pipeline{
     agent any
     stages{
         stage('parellel stages'){
