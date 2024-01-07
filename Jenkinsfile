@@ -1,11 +1,12 @@
-pipeline{
+ecutingpipeline{
     agent any
     stages{
         stage('parellel stages'){
             parellel{
                 stage("executing sonar scan"){
                     steps[
-                        echo "doing sonar scans"
+                        echo "exucuting sonar scans"\
+                        sleep 10
                     ]
                 }
                 stage("Doing forify scans"){
