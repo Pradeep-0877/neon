@@ -1,10 +1,11 @@
 pipeline{
     agent any
     stages{
-        stage('A'){
+        stage("Build"){
             steps{
-                echo "executing multi branch pipeline"
-                echo 'its working fine'
+                timeout {time: 300, unit: 'SECONDS'}
+                input message: "Are you sure ,Building this appliccation", ok: 'yes', submitter: 'pradeep Reddy'
+                scho 'Building my application'
             }
         }
         stage('B'){
