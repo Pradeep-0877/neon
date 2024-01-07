@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage('parellel stages'){
-            failfast true
+            failfast false
             parallel{
                 stage("executing sonar scan"){
                     steps{
