@@ -6,7 +6,7 @@ pipeline{
                 
                 timeout(time: 300,unit: 'SECONDS'){
                     input message: "Are you sure ,Building this appliccation", ok: 'yes', submitter: 'pradeep'
-                scho 'Building my application'
+                    echo 'Building my application'
                 }
             }
         }
