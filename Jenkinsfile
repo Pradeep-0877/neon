@@ -10,10 +10,10 @@ ecutingpipeline{
                     }
                 }
                 stage("Doing forify scans"){
-                    steps[
+                    steps{
                         echo "Doing fortify scans"
                         sleep 20
-                    ]
+                    }
                 }
                 stage("exucuting checkmarx scan"){
                     steps{
