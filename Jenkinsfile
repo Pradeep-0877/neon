@@ -30,5 +30,15 @@ pipeline{
                 sh 'printenv'
             }
         }
+        stage("deploy to prod"){
+            when{
+                // buildingTag=//
+                //the Below expression we will be using  will accept only v1.2.2/1 and not accept v1.2.3
+                tag pattern: "v\\d{1,2}.\\d{1,2}.\\d{1,2}"
+            }
+            steps{
+                echo "deploying to production !!!!"
+            }
+        }
     }
 }
