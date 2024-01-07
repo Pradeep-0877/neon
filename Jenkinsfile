@@ -3,9 +3,11 @@ pipeline{
     stages{
         stage("Build"){
             steps{
-                timeout {time: 300, unit: 'SECONDS'}
-                input message: "Are you sure ,Building this appliccation", ok: 'yes', submitter: 'pradeep Reddy'
+                
+                timeout(time: 300,unit: 'SECONDS'){
+                    input message: "Are you sure ,Building this appliccation", ok: 'yes', submitter: 'pradeep'
                 scho 'Building my application'
+                }
             }
         }
         stage('B'){
