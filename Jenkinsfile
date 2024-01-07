@@ -5,7 +5,7 @@ ecutingpipeline{
             parellel{
                 stage("executing sonar scan"){
                     steps{
-                        echo "exucuting sonar scans"\
+                        echo "exucuting sonar scans"
                         sleep 10
                     }
                 }
