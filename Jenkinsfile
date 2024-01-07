@@ -2,7 +2,7 @@ ecutingpipeline{
     agent any
     stages{
         stage('parellel stages'){
-            parellel{
+            parallel{
                 stage("executing sonar scan"){
                     steps{
                         echo "exucuting sonar scans"
