@@ -1,19 +1,16 @@
 pipeline{
     agent any
+    options{
+        buildDiscarder(logRotator(numToKeepStr: '2')) }
+    }
+    parameters{
+        // string ,text, booleanparameter, choice, password these some types parameters we can use
+        string(name: "BRANCH_NAME", defaultValue: "main", description: "In which branch should i Build ?")
+    }
     stages{
-        stage("Build"){
+        stage("parameters example"){
             steps{
-                
-                timeout(time: 300,unit: 'SECONDS'){
-                    input message: "Are you sure ,Building this appliccation", ok: 'yes', submitter: 'pradeep'
-                    echo 'Building my application'
-                }
-            }
-        }
-        stage('B'){
-            steps{
-                echo "executing multi branch pipeline"
-                echo 'it is a on different branch'
+                echo "name is  ${params.BRANCH_NAME}"
             }
         }
     }
