@@ -1,7 +1,7 @@
 pipeline{
     agent any
     options{
-        buildDiscarder(logRotator(numToKeepStr: '2')) }
+        buildDiscarder(logRotator(numToKeepStr: '2')) 
     }
     parameters{
         // string ,text, booleanparameter, choice, password these some types parameters we can use
