@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    options{
+        buildDiscarder(logRotator(numToKeepStr: '2'))
+    }
     stages{
         stage("deploying to dev ENV"){
             steps{
@@ -14,7 +17,7 @@ pipeline{
             input{
                 message "Approve"
                 ok "approved"
-                submitter "ravi"
+                submitter "admin"
                 submitterParameter "whoApproved"
                 parameters{
                     string(name: "CHANGE_TICKET", defaultValue: "CH!12345", description: "provide the change ticket number")
