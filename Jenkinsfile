@@ -1,5 +1,5 @@
 pipeline{
-    agent: any
+    agent any
     stages{
         stage("deploying to dev ENV"){
             steps{
@@ -23,13 +23,13 @@ pipeline{
                     text(name: "RELEASE_NOTES", description: "Provide the release notes here")
 
                 }
-                steps{
+            }
+            steps{
                     echo "The approver is ${params.CHANGE_TICKET}"
                     echo "The is approved by ${whoApproved}"
                     echo "This is a ${params.DEPLOY_ENV} environment"
                     echo "the release notes is ${params.RELEASE_NOTES}"
                 }
-            }
         }
     }
 }
