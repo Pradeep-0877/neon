@@ -13,6 +13,7 @@ pipeline{
         stage("My Build"){
             steps{
                 echo "creating a build"
+                error "This is just an error"
             }
 
         }
