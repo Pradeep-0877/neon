@@ -9,7 +9,7 @@ pipeline{
         stage("Deploy to prod"){
             options{
                 timeout(time: 300, unit: "SECONDS")
-                buildDiscarder(logRotator(numToKeepStr: '2')) 
+                // buildDiscarder(logRotator(numToKeepStr: '2')) 
             }
             input{
                 message "Approve"
