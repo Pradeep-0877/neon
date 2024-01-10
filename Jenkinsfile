@@ -8,7 +8,7 @@ pipeline{
         }
         stage("Deploy to prod"){
             options{
-                timeout(time: 300, unit; "SECONDS"),
+                timeout(time: 300, unit: "SECONDS"),
                 buildDiscarder(logRotator(numToKeepStr: '2')) 
             }
             input{
