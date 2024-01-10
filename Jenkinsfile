@@ -15,7 +15,7 @@ pipeline{
                 message "Approve"
                 ok "approved"
                 submitter "admin"
-                submitparameter "whoApproved"
+                submitterParameter "whoApproved"
                 parameters{
                     string(name: "CHANGE_TICKET", defaultValue: "CH!12345", description: "provide the change ticket number")
                     booleanParam(name: "SRE Approved??", defaultValue: false, description: "Are you sure SRE approved")
