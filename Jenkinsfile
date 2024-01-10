@@ -12,10 +12,10 @@ pipeline{
                 buildDiscarder(logRotator(numToKeepStr: '2')) 
             }
             input{
-                message: "Approve",
-                ok: "approved",
-                submitter: "admin",
-                submitParameter: "whoApproved",
+                message "Approve"
+                ok "approved"
+                submitter "admin"
+                submitParameter "whoApproved"
                 parameters{
                     string(name: "CHANGE_TICKET", defaultValue: "CH!12345", description: "provide the change ticket number")
                     booleanParam(name: "SRE Approved??", defaultValue: false, description: "Are you sure SRE approved")
@@ -25,7 +25,7 @@ pipeline{
                 }
                 steps{
                     echo "The approver is ${params.CHANGE_TICKET}"
-                    echo "The is approved by ${params.whoApproved}"
+                    echo "The is approved by ${whoApproved}"
                     echo "This is a ${params.DEPLOY_ENV} environment"
                     echo "the release notes is ${params.RELEASE_NOTES}"
                 }
