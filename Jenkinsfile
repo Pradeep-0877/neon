@@ -27,9 +27,9 @@ pipeline{
                 }
             }
             steps{
-                    echo "The approver is ${CHANGE_TICKET}"
+                    echo "The Ticket name is ${CHANGE_TICKET}"
                     echo "The is approved by ${whoApproved}"
-                    echo "This is a ${params.DEPLOY_ENV} environment"
+                    echo "This is a ${DEPLOY_ENV} environment"
                     echo "the release notes is ${RELEASE_NOTES}"
                 }
         }
