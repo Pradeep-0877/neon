@@ -1,14 +1,22 @@
 pipeline{
     agent any
     parameters{
-        booleanParam(defaultValue: false, description: "Perform sonar", name: 'SONAR')
-        string(defaultValue: "PROD", description: 'Select to Environment',name: "DEPLOY_TO")
-        choice(choices: ["TEST","PROD","QA"],description: "deploy environment",name: "DEPLOY_TO_CHOICES")
+        booleanParam(defaultValue: false, name: "SELECT", descption: "Using scrip[t...]")
     }
     stages{
-        stage('A'){
+        stege("A"){
             steps{
-                echo "environment is is set to ${params.DEPLOY_TO_CHOICES}"
+                script{
+                    if(params.SELECT==false){
+                        currentBuild.result='SUCCESS'
+                        return
+                    }
+                    else{
+                        echo "The select parameter is true "
+                    }
+
+                }
+
             }
         }
     }
