@@ -12,6 +12,7 @@ pipeline{
                 echo "DEPLOY_TO ${DEPLOY_TO}"
                 echo "myBool ${myBool}"
                 echo "myNumber ${myNumber}"
+                echo "${env.BRANCH_NAME} and ${env.BUILD_ID}"
             }
 
         }
