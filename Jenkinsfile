@@ -1,7 +1,8 @@
 pipeline{
     agent any
     parameters{
-        booleanParam(defaultValue: false, description: "Enable service", name: 'SELECT')
+        booleanParam(defaultValue: false, description: "Perform sonar", name: 'SONAR')
+        string(defaultValue: PROD, description: 'Select to Environment',required: true,name: DEPLOY_TO)
     }
     stages{
         stage('A'){
