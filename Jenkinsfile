@@ -1,5 +1,6 @@
 pipeline{
-    agent anystages{
+    agent any
+    stages{
         environment{
             DEPLOY_TO="PROD"
             myBool=true
