@@ -4,7 +4,7 @@ pipeline{
         booleanParam(defaultValue: false, name: "SELECT", descption: "Using scrip[t...]")
     }
     stages{
-        stege("A"){
+        stage("A"){
             steps{
                 script{
                     if(params.SELECT==false){
