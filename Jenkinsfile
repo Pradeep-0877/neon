@@ -1,7 +1,7 @@
 pipeline{
     agent any
     parameters{
-        booleanParam(defaultValue: false, name: "SELECT", desciption: "Using scrip[t...]")
+        booleanParam(defaultValue: false, name: "SELECT", description: "Using scrip[t...]")
     }
     stages{
         stage("A"){
