@@ -5,9 +5,9 @@ pipeline{
     ]
     stages{
         stage('A'){
-            steps[
+            steps{
                 echo "booleanParam is set to ${params.SELECT}"
-            ]
+            }
         }
     }
 }
