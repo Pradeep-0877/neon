@@ -12,7 +12,7 @@ pipeline{
             steps{
                  echo "hello $NAME"
                  echo "$comment"
-                 echo "printenv"
+                 echo "$printenv"
             }
         }
     }
