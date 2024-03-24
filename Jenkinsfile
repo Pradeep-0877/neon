@@ -6,6 +6,7 @@ pipeline{
     stages{
         stage('Build'){
             environment{
+                NAME = 'Ravi'
                 comment = "This is specific to only a stage only and not global"
             }
             steps{
