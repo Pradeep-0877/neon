@@ -10,7 +10,7 @@ pipeline{
             when{
                 // environment name: DEPLOY_TO, value: "prod"
                 not{
-                    equals expected: 13, actual: "${DEPLOY_TO}"
+                    equals expected: 13, actual: "$DEPLOY_TO"
                 }
             }
             steps{
