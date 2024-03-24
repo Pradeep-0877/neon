@@ -1,30 +1,16 @@
 pipeline{
     agent any
-    environment{
-        NAME='pradeep'
-    }
     stages{
-        stage('Build'){
+        stage("w=testing when condition"){
             environment{
-                NAME = 'Ravi'
-                comment = "This is specific to only a stage only and not global"
+                DEPLOY_TO = "prod"
+            }
+            when{
+                environment name = "prod", value = "dev"
             }
             steps{
-                 echo "hello $NAME"
-                 echo "$comment"
-                 sh 'printenv'
+                echo "condition satified for $DEPLOY_TO environment"
             }
-        }
-        stage("Buils"){
-            environment{
-                tomcat_creds = credentials('tomcat')
-            }
-            steps{
-                echo "The username is $tomcat_creds_usr"
-                echo "The password is $tomcat_creds_psw"
-
-            }
-
         }
     }
 }
