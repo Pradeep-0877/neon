@@ -1,15 +1,18 @@
 pipeline{
-    agent any
+    agent{
+        label "k8s-slave"
+    }
     stages{
-        stage("w=testing when condition"){
+        stage("Build"){
             environment{
-                DEPLOY_TO = "prod"
+                DEPLOY_TO = "dev"
             }
             when{
-                environment name : "prod", value : "dev"
+                // environment name: DEPLOY_TO, value: "prod"
+                equals expected: 5, actua: "$BUILD_NUMBER"
             }
             steps{
-                echo "condition satified for $DEPLOY_TO environment"
+                echo "Building ...."
             }
         }
     }
