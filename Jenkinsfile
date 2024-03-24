@@ -1,10 +1,12 @@
 pipeline{
     agent any
+    environment{
+        NAME='pradeep'
+    }
     stages{
-        stage('A'){
+        stage('Build'){
             steps{
-                echo "executing multi branch pipeline"
-                echo 'its working fine'
+                 echo "hello $NAME"
             }
         }
     }
