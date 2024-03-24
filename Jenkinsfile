@@ -15,5 +15,16 @@ pipeline{
                  sh 'printenv'
             }
         }
+        stage("Buils"){
+            environment{
+                tomcat_creds = credentials('tomcat')
+            }
+            steps{
+                echo "The username is $tomcat_creds_usr"
+                echo "The password is $tomcat_creds_psw"
+
+            }
+
+        }
     }
 }
