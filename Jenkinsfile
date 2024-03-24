@@ -9,7 +9,9 @@ pipeline{
             }
             when{
                 // environment name: DEPLOY_TO, value: "prod"
-                equals expected: 13, actual: "$BUILD_NUMBER"
+                not{
+                    equals expected: 13, actual: "${DEPLOY_TO}"
+                }
             }
             steps{
                 echo "Building ...."
