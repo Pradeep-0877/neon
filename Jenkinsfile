@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        label 'k8s-slave'
-    }
+    agent any
     environment{
         DEPLOY_TO = 'dev'
     }
