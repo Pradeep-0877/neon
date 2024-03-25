@@ -6,8 +6,8 @@ pipeline{
                 DEPLOY_TO = "dev"
             }
             when{
-                allOf{
-                    branch 'praduction'
+                anyOf{
+                    branch 'production'
                     environment name: 'DEPLOY_TO', value: 'dev'
                 }
             }
