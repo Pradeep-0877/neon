@@ -5,7 +5,7 @@ pipeline{
     environment{
         DEPLOY_TO = 'dev'
     }
-    stages[
+    stages{
         stage("Deploy"){
             when{
                 expression{
@@ -26,5 +26,5 @@ pipeline{
                 echo "Deploying in $BRANCH_NAME"
             }
         }
-    ]
+    }
 }
