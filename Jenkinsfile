@@ -11,6 +11,9 @@ pipeline{
                     environment name: 'DEPLOY_TO', value: 'dev'
                 }
             }
+            steps{
+                echo "deployed to $DEPLOY_TO"
+            }
         }
     }
 }
