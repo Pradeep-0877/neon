@@ -8,7 +8,7 @@ pipeline{
             steps{
                 
                 
-                    timeout(time: 10,unit: 'SECONDS'){
+                    timeout(time: 20,unit: 'SECONDS'){
                         input message: 'Are you building the application ?',ok: 'yes',submitter: 'ullas'  
                     
                 }
