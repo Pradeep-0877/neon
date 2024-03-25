@@ -1,17 +1,17 @@
 pipeline{
     agent any
     stages{
-        stage("Deploying..'){
+        stage("Deploying..."){
             when{
                     branch 'hotfix'
                 }
-            
+            steps{
                 
-                steps{
+                
                     timeout(time: 10,unit: 'SECONDS'){
                         input message: 'Are you building the application ?',ok: 'yes',submitter: 'ullas'  
-                    }
-                
+                    
+                }
             }
         }
     }
