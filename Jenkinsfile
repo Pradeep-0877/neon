@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage("running parellel stages"){
-            parellel{
+            parallel{
                 stage("sonar"){
                     steps{
                         echo "sonar scans successfull...."
