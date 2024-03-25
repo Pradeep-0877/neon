@@ -1,27 +1,15 @@
 pipeline{
     agent any
-    environment{
-        DEPLOY_TO = 'dev'
-    }
     stages{
-        stage("Deploy"){
+        stage("Deploy to dev"){
+            environment{
+                DEPLOY_TO = "dev"
+            }
             when{
-                expression{
-                    BRANCH_NAME ==~ /(dev|test)/
+                allOf{
+                    branch 'praduction'
+                    environment name: 'DEPLOY_TO', value: 'dev'
                 }
-            }
-            steps{
-                echo "deploying to $BRANCH_NAME env"
-            }
-        }
-        stage("Deploy to prod"){
-            when{
-                expression{
-                    BRANCH_NAME ==~ /(prod|hotfix)/
-                }
-            }
-            steps{
-                echo "Deploying in $BRANCH_NAME"
             }
         }
     }
