@@ -1,10 +1,11 @@
 pipeline{
     agent any
+     environment{
+                DEPLOY_TO = "dev"
+     }
     stages{
         stage("Deploy to dev"){
-            environment{
-                DEPLOY_TO = "dev"
-            }
+           
             when{
                 anyOf{
                     branch 'production'
