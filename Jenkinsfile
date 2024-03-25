@@ -1,22 +1,30 @@
 pipeline{
     agent{
-        label "k8s-slave"
+        label 'k8s-slave'
     }
-     environment{
-                DEPLOY_TO = "dev"
+    environment{
+        DEPLOY_TO = 'dev'
     }
-    stages{
-        stage("Build"){
-           
+    stages[
+        stage("Deploy"){
             when{
-                // environment name: DEPLOY_TO, value: "prod"
-                not{
-                    equals expected: 13, actual: "$DEPLOY_TO"
+                expression{
+                    BRANCH_NAME ==~ /(dev|test)/
                 }
             }
             steps{
-                echo "Building ...."
+                echo "deploying to $BRANCH_NAME env"
             }
         }
-    }
+        stage("Deploy to prod"){
+            when{
+                expression{
+                    BRANCH_NAME ==~ /(prod|hotfix)/
+                }
+            }
+            steps{
+                echo "Deploying in $BRANCH_NAME"
+            }
+        }
+    ]
 }
