@@ -1,20 +1,17 @@
 pipeline{
     agent any
     stages{
-        stage("running parellel stages"){
-            parallel{
-                stage("sonar"){
-                    steps{
-                        echo "sonar scans successfull...."
-                    }
+        stage{
+            steps{
+                when{
+                    branch 'hotfix'
                 }
-                stage("fortify scans"){
-                    steps{
-                        echo "fortify scans completed"
+                steps{
+                    timeout(time: 10,unit: 'SECONDS'){
+                        input message: 'Are you building the application ?',ok: 'yes',submitter: 'ullas'  
                     }
                 }
             }
         }
     }
-
 }
