@@ -6,7 +6,7 @@ pipeline{
                 branch "release-*"
             }
             steps{
-                echo "Deploying to @BRANCH_NAME"
+                echo "Deploying to $BRANCH_NAME"
             }
         ]
     }
