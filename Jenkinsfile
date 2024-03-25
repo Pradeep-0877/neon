@@ -8,7 +8,7 @@ pipeline{
             when{
                 anyOf{
                     branch 'production'
-                    environment name: "DEPLOY_TO", value: 'dev'
+                    environment name: "DEPLOY_TO", value: "dev"
                 }
             }
             steps{
